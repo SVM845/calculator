@@ -1,3 +1,33 @@
 body {
+    height: 100vh;
+    width: 100vw;
     background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    width: 700px;
+    height: 600px;
+}
+#display {
+    display: flex;
+    width:500px;
+    height: 50px;
+    border: 2px solid red;
+}
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
 }
