@@ -60,13 +60,17 @@ body {
   font-size: 40px;
   font-weight: bold;
 }
-.buttons div:hover {
-    background-color: rgb(214, 177, 9);
-}
+
 #clearButton {
     background-color: rgb(196, 27, 27);
 }
 .buttons .opButtons {
     background-color: rgb(59, 37, 9);
     color: white;
+}
+.buttons div:hover {
+    background-color: rgb(214, 177, 9);
+}
+.buttons #clearButton:hover {
+    background-color: rgb(214, 177, 9);
 }
