@@ -36,9 +36,7 @@
   --theme-button-color: #d9faff;
 }
 
-/* =========================
-   LIGHT THEME
-========================= */
+/*LIGHT THEME*/
 
 body.light-mode {
   --body-bg: linear-gradient(135deg, #f4f7fa, #dce3e9);
@@ -68,9 +66,7 @@ body.light-mode {
   --theme-button-color: #17232d;
 }
 
-/* =========================
-   BODY
-========================= */
+/*BODY*/
 
 body {
   margin: 0;
@@ -89,9 +85,7 @@ body {
   transition: background 0.4s ease;
 }
 
-/* =========================
-   THEME BUTTON
-========================= */
+/*THEME BUTTON*/
 
 #themeButton {
   position: fixed;
@@ -129,9 +123,7 @@ body {
   transform: scale(0.95);
 }
 
-/* =========================
-   CALCULATOR
-========================= */
+/*CALCULATOR*/
 
 .calculator {
   width: 500px;
@@ -158,9 +150,7 @@ body {
     box-shadow 0.4s ease;
 }
 
-/* =========================
-   DISPLAY
-========================= */
+/*DISPLAY*/
 
 #display {
   width: 100%;
@@ -195,9 +185,7 @@ body {
     border 0.4s ease;
 }
 
-/* =========================
-   BUTTON CONTAINER
-========================= */
+/*BUTTON CONTAINER*/
 
 #buttonsContainer {
   flex: 1;
@@ -219,9 +207,7 @@ body {
     border 0.4s ease;
 }
 
-/* =========================
-   BUTTON GRID
-========================= */
+/*BUTTON GRID*/
 
 .buttons {
   margin-top: 40px;
@@ -238,9 +224,7 @@ body {
   gap: 12px;
 }
 
-/* =========================
-   NORMAL BUTTONS
-========================= */
+/*NORMAL BUTTONS*/
 
 .buttons button {
   width: 100%;
@@ -275,9 +259,7 @@ body {
     border 0.3s ease;
 }
 
-/* =========================
-   BUTTON HOVER
-========================= */
+/*BUTTON HOVER*/
 
 .buttons button:hover {
   background: var(--button-hover);
@@ -291,9 +273,7 @@ body {
     0 0 15px rgba(0, 210, 255, 0.2);
 }
 
-/* =========================
-   BUTTON PRESS
-========================= */
+/*BUTTON PRESS*/
 
 .buttons button:active {
   transform: translateY(4px);
@@ -303,9 +283,7 @@ body {
     inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================
-   OPERATORS
-========================= */
+/*OPERATORS*/
 
 .buttons .opButtons {
   background: linear-gradient(145deg, #e18a00, #9b5000);
@@ -329,9 +307,7 @@ body {
     0 0 20px rgba(255, 166, 0, 0.35);
 }
 
-/* =========================
-   CLEAR
-========================= */
+/*CLEAR*/
 
 #clearButton {
   background: linear-gradient(145deg, #e83d4f, #8e1725);
@@ -353,9 +329,7 @@ body {
     0 0 20px rgba(255, 60, 80, 0.35);
 }
 
-/* =========================
-   FOCUS
-========================= */
+/*FOCUS*/
 
 .buttons button:focus-visible {
   outline: none;
@@ -368,9 +342,7 @@ body {
     0 0 20px rgba(33, 191, 232, 0.5);
 }
 
-/* =========================
-   LIGHT MODE OVERRIDES
-========================= */
+/*LIGHT MODE OVERRIDES*/
 
 body.light-mode .buttons button:hover {
   color: #18232c;
@@ -380,9 +352,7 @@ body.light-mode .buttons .opButtons:hover {
   color: white;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/*RESPONSIVE*/
 
 @media (max-width: 600px) {
   .calculator {
