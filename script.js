@@ -7,6 +7,60 @@ let currentValue2 = '';
 let currentValue1 = '';
 let result = '';
 
+
+
+document.addEventListener("keydown", (e) => {
+    target = e.key;
+    switch (e.key) {
+        case "1":
+            currentValue2 += "1";
+            break;
+        case "2":
+            currentValue2 += "2";
+            break;
+        case "3":
+            currentValue2 += "3";
+            break;
+        case "4":
+            currentValue2 += "4";
+            break;
+        case "5":
+            currentValue2 += "5";
+            break;
+        case "6":
+            currentValue2 += "6";
+            break;
+        case "7":
+            currentValue2 += "7";
+            break;
+        case "8":
+            currentValue2 += "8";
+            break;
+        case "9":
+            currentValue2 += "9";
+            break;
+        case "0":
+            currentValue2 += "0";
+            break;
+    }
+    if (target === "Clear") { clearButton() }
+    else if (target === "Backspace"){ clearButton()}
+    else if (target === "=" || target == "Enter12") { equationButton() }
+    else if (display.textContent === "Infinity" || display.textContent === "NaN") {
+        currentValue2 = "";
+        display.textContent = "";
+    }
+    else if (target === "+" || target === "-" || target === "*" || target === "/") {
+        opeButtons(currentValue2);
+        operator = e.key;
+        currentValue2 = "";
+    }
+    else {
+        display.textContent = currentValue2;
+    };
+})
+
+
 input.forEach(button => {
     button.addEventListener("click", (e) => {
         target = e.target.textContent;
@@ -99,10 +153,10 @@ function equationButton() {
     result = operate(operator, operand1, operand2);
     display.textContent = result;
     currentValue1 = "";
-    currentValue2 = ""; 
-    
+    currentValue2 = "";
+
 }
-function opeButtons(currentValue2){
+function opeButtons(currentValue2) {
     operand1 = currentValue2;
     display.textContent = "";
     return currentValue1 = operand1;
