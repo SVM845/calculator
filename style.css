@@ -1,77 +1,419 @@
-body {
-  margin: 0px;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(180, 185, 187);
-}
-
-.calculator {
-  padding: 30px;
-  gap: 20px;
-  border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 600px;
-  border: 2px solid rgb(0, 0, 0);
-  background-color: white;
-}
-#display {
-  display: flex;
-  gap: 10px;
-  border-radius: 5%;
-  font-size: 40px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: rgb(13, 165, 211);
-  width: 100%;
-  height: 80px;
+* {
   box-sizing: border-box;
 }
 
-#buttonsContainer {
-  flex: 1;
-  width: 100%;
-  height: 500px;
-  background-color: rgb(243, 239, 239);
+:root {
+  /* DARK THEME */
+  --body-bg: radial-gradient(
+    circle at 50% 40%,
+    #182b3a 0%,
+    #0b1118 45%,
+    #05080c 100%
+  );
+
+  --calculator-bg: linear-gradient(145deg, #202a33, #10161c);
+
+  --container-bg: #0c1218;
+
+  --display-bg: linear-gradient(145deg, #06151d, #0b202b);
+
+  --display-color: #d9faff;
+  --display-border: #1c8aaa;
+
+  --button-bg: linear-gradient(145deg, #26313b, #171e25);
+
+  --button-hover: linear-gradient(145deg, #344652, #202b34);
+
+  --button-color: #dbe5ec;
+  --button-border: #394955;
+
+  --calculator-border: #3b4d5c;
+  --container-border: #263541;
+
+  --button-shadow: #080c10;
+
+  --theme-button-bg: #17232d;
+  --theme-button-color: #d9faff;
 }
 
-.buttons {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light-mode {
+  --body-bg: linear-gradient(135deg, #f4f7fa, #dce3e9);
+
+  --calculator-bg: linear-gradient(145deg, #ffffff, #e4e9ee);
+
+  --container-bg: #edf1f4;
+
+  --display-bg: linear-gradient(145deg, #f8fbfd, #dce7ee);
+
+  --display-color: #17232d;
+  --display-border: #8fa6b5;
+
+  --button-bg: linear-gradient(145deg, #ffffff, #dfe5e9);
+
+  --button-hover: linear-gradient(145deg, #ffffff, #cbd5dc);
+
+  --button-color: #18232c;
+  --button-border: #aab6bf;
+
+  --calculator-border: #b6c1c9;
+  --container-border: #c4ced5;
+
+  --button-shadow: #9aa7b0;
+
+  --theme-button-bg: #ffffff;
+  --theme-button-color: #17232d;
 }
-.buttons button {
-  background-color: rgb(252, 249, 249);
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 100px;
-  border-radius: 5%;
-  border: 2px solid black;
-  font-size: 40px;
-  font-weight: bold;
+
+  background: var(--body-bg);
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  transition: background 0.4s ease;
 }
 
-#clearButton {
-  background-color: rgb(196, 27, 27);
+/* =========================
+   THEME BUTTON
+========================= */
+
+#themeButton {
+  position: fixed;
+
+  top: 25px;
+  right: 25px;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--calculator-border);
+
+  background: var(--theme-button-bg);
+  color: var(--theme-button-color);
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease,
+    color 0.3s ease;
 }
+
+#themeButton:hover {
+  transform: scale(1.1);
+}
+
+#themeButton:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+  width: 500px;
+  height: 650px;
+
+  padding: 25px;
+  gap: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--calculator-bg);
+
+  border: 1px solid var(--calculator-border);
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.4s ease,
+    border 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =========================
+   DISPLAY
+========================= */
+
+#display {
+  width: 100%;
+  height: 100px;
+
+  padding: 15px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: var(--display-bg);
+
+  border: 1px solid var(--display-border);
+
+  color: var(--display-color);
+
+  font-size: 42px;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  box-shadow: inset 0 0 20px rgba(0, 200, 255, 0.08);
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    border 0.4s ease;
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+#buttonsContainer {
+  flex: 1;
+
+  width: 100%;
+
+  padding: 12px;
+
+  background: var(--container-bg);
+
+  border: 1px solid var(--container-border);
+
+  border-radius: 20px;
+
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.4s ease,
+    border 0.4s ease;
+}
+
+/* =========================
+   BUTTON GRID
+========================= */
+
+.buttons {
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+
+  padding: 5px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+
+  gap: 12px;
+}
+
+/* =========================
+   NORMAL BUTTONS
+========================= */
+
+.buttons button {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--button-border);
+  border-radius: 14px;
+
+  background: var(--button-bg);
+
+  color: var(--button-color);
+
+  font-size: 30px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 var(--button-shadow),
+    0 8px 15px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.08s ease,
+    background 0.3s ease,
+    box-shadow 0.2s ease,
+    color 0.3s ease,
+    border 0.3s ease;
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.buttons button:hover {
+  background: var(--button-hover);
+
+  color: #ffffff;
+
+  border-color: #39c8ed;
+
+  box-shadow:
+    0 5px 0 var(--button-shadow),
+    0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+/* =========================
+   BUTTON PRESS
+========================= */
+
+.buttons button:active {
+  transform: translateY(4px);
+
+  box-shadow:
+    0 1px 0 var(--button-shadow),
+    inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   OPERATORS
+========================= */
+
 .buttons .opButtons {
-  background-color: rgb(59, 37, 9);
+  background: linear-gradient(145deg, #e18a00, #9b5000);
+
+  color: #fff7e5;
+
+  border-color: #ffb52e;
+
+  box-shadow:
+    0 5px 0 #542c00,
+    0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.buttons .opButtons:hover {
+  background: linear-gradient(145deg, #ffb52e, #d87500);
+
+  color: white;
+
+  box-shadow:
+    0 5px 0 #542c00,
+    0 0 20px rgba(255, 166, 0, 0.35);
+}
+
+/* =========================
+   CLEAR
+========================= */
+
+#clearButton {
+  background: linear-gradient(145deg, #e83d4f, #8e1725);
+
+  color: white;
+
+  border-color: #ff5b6b;
+
+  box-shadow:
+    0 5px 0 #4b0c14,
+    0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+#clearButton:hover {
+  background: linear-gradient(145deg, #ff5969, #c52638);
+
+  box-shadow:
+    0 5px 0 #4b0c14,
+    0 0 20px rgba(255, 60, 80, 0.35);
+}
+
+/* =========================
+   FOCUS
+========================= */
+
+.buttons button:focus-visible {
+  outline: none;
+
+  border-color: #39d5ff;
+
+  box-shadow:
+    0 0 0 2px #071017,
+    0 0 0 4px #21bfe8,
+    0 0 20px rgba(33, 191, 232, 0.5);
+}
+
+/* =========================
+   LIGHT MODE OVERRIDES
+========================= */
+
+body.light-mode .buttons button:hover {
+  color: #18232c;
+}
+
+body.light-mode .buttons .opButtons:hover {
   color: white;
 }
-.buttons button:hover {
-  background-color: rgb(214, 177, 9);
-}
-.buttons #clearButton:hover {
-  background-color: rgb(214, 177, 9);
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .calculator {
+    width: 92vw;
+    height: 90vh;
+
+    padding: 18px;
+    gap: 15px;
+  }
+
+  #display {
+    height: 85px;
+    font-size: 32px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .buttons button {
+    font-size: 24px;
+    border-radius: 11px;
+  }
+
+  #themeButton {
+    top: 15px;
+    right: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    font-size: 20px;
+  }
 }

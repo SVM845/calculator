@@ -8,6 +8,23 @@ let currentValue1 = '';
 let result = '';
 
 
+const themeButton = document.createElement("button");
+
+themeButton.id = "themeButton";
+themeButton.textContent = "☀️";
+
+document.body.appendChild(themeButton);
+
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        themeButton.textContent = "🌙";
+    } else {
+        themeButton.textContent = "☀️";
+    }
+});
+
 
 document.addEventListener("keydown", (e) => {
     target = e.key;
@@ -45,7 +62,7 @@ document.addEventListener("keydown", (e) => {
     }
     if (target === "Clear") { clearButton() }
     else if (target === "Backspace"){ clearButton()}
-    else if (target === "=" || target == "Enter12") { equationButton() }
+    else if (target === "=" || target == "Enter") { equationButton() }
     else if (display.textContent === "Infinity" || display.textContent === "NaN") {
         currentValue2 = "";
         display.textContent = "";
