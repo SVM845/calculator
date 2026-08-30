@@ -9,52 +9,51 @@ input.forEach(button => {
     button.addEventListener("click", (e) => {
         target = e.target.textContent;
         if (target === "Clear") { clearButton() }
-        else if (target === "=") { equationButton(currentValue) }
+        else if (target === "=") { 
+            equationButton(currentValue)
+            currentValue = "";
+        }
         else {
             currentValue += e.target.textContent;
+            display.textContent = currentValue;
+
         };
-
-        display.textContent = currentValue;
-
-
-
-
     })
 })
+
+
+
 function add(num1, num2) {
-    return console.log(num1 + num2);
+    return num1 + num2;
 }
 function subtract(num1, num2) {
-    return console.log(num1 - num2);
+    return num1 - num2;
 }
 function multiply(num1, num2) {
-    return console.log(num1 * num2);
+    return num1 * num2;
 }
 function divide(num1, num2) {
-    return console.log(num1 / num2);
+    return num1 / num2;
 }
 
 function operate(operator, number1, number2) {
     switch (operator) {
         case "+":
             return add(number1, number2);
-            break;
         case "-":
             return subtract(number1, number2);
-            break;
         case "*":
             return multiply(number1, number2);
-            break;
         case "/":
             return divide(number1, number2);
-            break;
-    } 
-    
+    }
+
 }
 
 
 function clearButton() {
-    return currentValue = '';
+    currentValue = "";
+    display.textContent = "";
 }
 function equationButton(currentValue) {
     console.log(currentValue.split(""));
@@ -75,8 +74,8 @@ function equationButton(currentValue) {
             }
             operand2 = Number(newValue2);
 
-
-            return operate(operator, operand1, operand2);
+            
+            display.textContent = operate(operator, operand1, operand2);
 
         }
     }
