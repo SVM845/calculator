@@ -11,10 +11,7 @@ This project is the final project of my current learning phase and brings togeth
 * ➖ Subtraction
 * ✖️ Multiplication
 * ➗ Division
-* 🔢 Decimal number support
-* ⌫ Delete / backspace functionality
 * 🔄 Clear / reset functionality
-* 🧮 Chained calculations
 * 🖥️ Interactive on-screen buttons
 * ⌨️ Keyboard support
 * ⚠️ Basic handling of invalid calculations
@@ -48,29 +45,6 @@ The goal of this project was not only to create a working calculator, but to put
 
 Instead of relying on a calculator library or external code, the calculator logic and user interactions are implemented using vanilla JavaScript.
 
-## 📸 Preview
-
-*Add a screenshot of your calculator here.*
-
-```md
-![Calculator Preview](./images/preview.png)
-```
-
-## 🚀 Live Demo
-
-[View Live Demo](#)
-
-## 💻 Run Locally
-
-Clone the repository:
-
-```bash
-git clone <your-repository-url>
-```
-
-Open the project directory and launch `index.html` in your browser.
-
-No dependencies or installation are required.
 
 ## 🔮 Future Improvements
 
