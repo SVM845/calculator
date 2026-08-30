@@ -387,3 +387,114 @@ body.light-mode .buttons .opButtons:hover {
     font-size: 20px;
   }
 }
+/*FOOTER*/
+
+.nova-footer {
+    position: fixed;
+
+    bottom: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 7px 16px;
+
+    color: #7f9aa8;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    background: rgba(5, 10, 14, 0.75);
+
+    border: 1px solid #263b47;
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 12px rgba(0, 200, 255, 0.08),
+        inset 0 0 10px rgba(0, 200, 255, 0.03);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border 0.3s ease;
+}
+
+.footer-divider {
+    color: #f5a900;
+
+    text-shadow:
+        0 0 8px rgba(245, 169, 0, 0.7);
+}
+
+.nova-footer span:first-child {
+    color: #9db2bd;
+}
+
+.nova-footer span:last-child {
+    color: #22c7f2;
+
+    text-shadow:
+        0 0 8px rgba(34, 199, 242, 0.5);
+}
+
+
+/* Hover = little cyberpunk HUD effect */
+
+.nova-footer:hover {
+    color: #dffaff;
+
+    border-color: #22c7f2;
+
+    box-shadow:
+        0 0 15px rgba(34, 199, 242, 0.18),
+        inset 0 0 12px rgba(34, 199, 242, 0.05);
+}
+
+
+/*LIGHT MODE*/
+
+body.light-mode .nova-footer {
+    background: rgba(255, 255, 255, 0.8);
+
+    border-color: #aebcc5;
+
+    color: #50616c;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .nova-footer span:first-child {
+    color: #465762;
+}
+
+body.light-mode .nova-footer span:last-child {
+    color: #087d9f;
+
+    text-shadow: none;
+}
+
+
+/*MOBILE*/
+
+@media (max-width: 600px) {
+
+    .nova-footer {
+        bottom: 10px;
+
+        font-size: 9px;
+        letter-spacing: 1.5px;
+
+        padding: 6px 12px;
+    }
+}
